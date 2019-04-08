@@ -1,0 +1,1111 @@
+object DTM: TDTM
+  OldCreateOrder = False
+  Height = 816
+  HorizontalOffset = 1317
+  VerticalOffset = 85
+  Width = 553
+  PPI = 96
+  object Connection: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
+    Properties.Strings = (
+      'AutoEncodeStrings='
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 0
+    Database = 'C:\CAPIS\CAPIS\DataBase\CAPIS.db'
+    Protocol = 'sqlite-3'
+    left = 208
+    top = 32
+  end
+  object QPaciente: TZQuery
+    Connection = Connection
+    UpdateObject = UPaciente
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM tbPacientes'
+    )
+    Params = <>
+    left = 96
+    top = 121
+    object QPacienteidPaciente: TLargeintField
+      FieldKind = fkData
+      FieldName = 'idPaciente'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QPacientenomePaciente: TStringField
+      FieldKind = fkData
+      FieldName = 'nomePaciente'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 800
+    end
+    object QPacienteCPF: TStringField
+      FieldKind = fkData
+      FieldName = 'CPF'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 56
+    end
+    object QPacienteregistroGeral: TStringField
+      FieldKind = fkData
+      FieldName = 'registroGeral'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object QPacientecontato: TStringField
+      FieldKind = fkData
+      FieldName = 'contato'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object QPacienteendereco: TStringField
+      FieldKind = fkData
+      FieldName = 'endereco'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object QPacientebairro: TStringField
+      FieldKind = fkData
+      FieldName = 'bairro'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object QPacientecidade: TStringField
+      FieldKind = fkData
+      FieldName = 'cidade'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object QPacienteestado: TStringField
+      FieldKind = fkData
+      FieldName = 'estado'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object QPacienteCEP: TStringField
+      FieldKind = fkData
+      FieldName = 'CEP'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 36
+    end
+    object QPacientesexo: TStringField
+      FieldKind = fkData
+      FieldName = 'sexo'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object QPacientedataNascimento: TDateField
+      FieldKind = fkData
+      FieldName = 'dataNascimento'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QPacientenacionalidade: TStringField
+      FieldKind = fkData
+      FieldName = 'nacionalidade'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object QPacientenaturalidade: TStringField
+      FieldKind = fkData
+      FieldName = 'naturalidade'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+  end
+  object DSPaciente: TDataSource
+    DataSet = QPaciente
+    OnDataChange = DSPacienteDataChange
+    left = 96
+    top = 184
+  end
+  object QAtestadoPaciente: TZQuery
+    Connection = Connection
+    UpdateObject = UAtestadoPaciente
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM tbAtestadoPaciente'
+    )
+    Params = <>
+    left = 96
+    top = 272
+    object QAtestadoPacienteidAtestadoPaciente: TLargeintField
+      FieldKind = fkData
+      FieldName = 'idAtestadoPaciente'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QAtestadoPacienteidPaciente: TLongintField
+      FieldKind = fkData
+      FieldName = 'idPaciente'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QAtestadoPacientedata: TDateField
+      FieldKind = fkData
+      FieldName = 'data'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object QAtestadoPacienteperiodo: TFloatField
+      FieldKind = fkData
+      FieldName = 'periodo'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object QAtestadoPacienteCID: TStringField
+      FieldKind = fkData
+      FieldName = 'CID'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object QAtestadoPacientetipo: TStringField
+      FieldKind = fkData
+      FieldName = 'tipo'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object QAtestadoPacienteatestado: TStringField
+      FieldKind = fkData
+      FieldName = 'atestado'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 2000
+    end
+  end
+  object UAtestadoPaciente: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM tbAtestadoPaciente'
+      'WHERE'
+      '  ((tbAtestadoPaciente.idAtestadoPaciente IS NULL AND :OLD_idAtestadoPaciente IS NULL) OR (tbAtestadoPaciente.idAtestadoPaciente = :OLD_idAtestadoPaciente))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO tbAtestadoPaciente'
+      '  (idAtestadoPaciente, idPaciente, data, periodo, CID, tipo, atestado)'
+      'VALUES'
+      '  (:idAtestadoPaciente, :idPaciente, :data, :periodo, :CID, :tipo, :atestado)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE tbAtestadoPaciente SET'
+      '  idAtestadoPaciente = :idAtestadoPaciente,'
+      '  idPaciente = :idPaciente,'
+      '  data = :data,'
+      '  periodo = :periodo,'
+      '  CID = :CID,'
+      '  tipo = :tipo,'
+      '  atestado = :atestado'
+      'WHERE'
+      '  ((tbAtestadoPaciente.idAtestadoPaciente IS NULL AND :OLD_idAtestadoPaciente IS NULL) OR (tbAtestadoPaciente.idAtestadoPaciente = :OLD_idAtestadoPaciente))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 16
+    top = 272
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idAtestadoPaciente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'idPaciente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'data'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'periodo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'tipo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'atestado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_idAtestadoPaciente'
+        ParamType = ptUnknown
+      end>
+  end
+  object DSAtestadoPaciente: TDataSource
+    DataSet = QAtestadoPaciente
+    left = 96
+    top = 336
+  end
+  object QReceituarioDeControleEspecial: TZQuery
+    Connection = Connection
+    UpdateObject = UReceituarioDeControleEspecial
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM tbReceituarioDeControleEspecial'
+    )
+    Params = <>
+    left = 96
+    top = 416
+    object QReceituarioDeControleEspecialidReceituario: TLargeintField
+      FieldKind = fkData
+      FieldName = 'idReceituario'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QReceituarioDeControleEspecialidPaciente: TLargeintField
+      FieldKind = fkData
+      FieldName = 'idPaciente'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object QReceituarioDeControleEspecialprescricao: TMemoField
+      FieldKind = fkData
+      FieldName = 'prescricao'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object QReceituarioDeControleEspecialdata: TDateField
+      FieldKind = fkData
+      FieldName = 'data'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+  end
+  object DSReceituarioDeControleEspecial: TDataSource
+    DataSet = QReceituarioDeControleEspecial
+    left = 96
+    top = 481
+  end
+  object QNotificacaoDeReceita: TZQuery
+    Connection = Connection
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM tbNotificacaoDeReceita'
+    )
+    Params = <>
+    left = 104
+    top = 576
+    object QNotificacaoDeReceitaidNotificacaoDeReceita: TLargeintField
+      FieldKind = fkData
+      FieldName = 'idNotificacaoDeReceita'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QNotificacaoDeReceitanumero: TLongintField
+      FieldKind = fkData
+      FieldName = 'numero'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QNotificacaoDeReceitaidPaciente: TLongintField
+      FieldKind = fkData
+      FieldName = 'idPaciente'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QNotificacaoDeReceitamedicamentoOuSubstancia: TStringField
+      FieldKind = fkData
+      FieldName = 'medicamentoOuSubstancia'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 800
+    end
+    object QNotificacaoDeReceitaquantidade: TLongintField
+      FieldKind = fkData
+      FieldName = 'quantidade'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QNotificacaoDeReceitaforma: TStringField
+      FieldKind = fkData
+      FieldName = 'forma'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object QNotificacaoDeReceitadosePorUnidadePosologica: TFloatField
+      FieldKind = fkData
+      FieldName = 'dosePorUnidadePosologica'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object QNotificacaoDeReceitadose: TStringField
+      FieldKind = fkData
+      FieldName = 'dose'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object QNotificacaoDeReceitaquantidadePosologia: TFloatField
+      FieldKind = fkData
+      FieldName = 'quantidadePosologia'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object QNotificacaoDeReceitaposologia: TStringField
+      FieldKind = fkData
+      FieldName = 'posologia'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+  end
+  object UNotificacaoDeReceita: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM tbNotificacaoDeReceita'
+      'WHERE'
+      '  ((tbNotificacaoDeReceita.idNotificacaoDeReceita IS NULL AND :OLD_idNotificacaoDeReceita IS NULL) OR (tbNotificacaoDeReceita.idNotificacaoDeReceita = :OLD_idNotificacaoDeReceita))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO tbNotificacaoDeReceita'
+      '  (idNotificacaoDeReceita, numero, idPaciente, medicamentoOuSubstancia, '
+      '   quantidade, forma, dosePorUnidadePosologica, dose, quantidadePosologia, '
+      '   posologia)'
+      'VALUES'
+      '  (:idNotificacaoDeReceita, :numero, :idPaciente, :medicamentoOuSubstancia, '
+      '   :quantidade, :forma, :dosePorUnidadePosologica, :dose, :quantidadePosologia, '
+      '   :posologia)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE tbNotificacaoDeReceita SET'
+      '  idNotificacaoDeReceita = :idNotificacaoDeReceita,'
+      '  numero = :numero,'
+      '  idPaciente = :idPaciente,'
+      '  medicamentoOuSubstancia = :medicamentoOuSubstancia,'
+      '  quantidade = :quantidade,'
+      '  forma = :forma,'
+      '  dosePorUnidadePosologica = :dosePorUnidadePosologica,'
+      '  dose = :dose,'
+      '  quantidadePosologia = :quantidadePosologia,'
+      '  posologia = :posologia'
+      'WHERE'
+      '  ((tbNotificacaoDeReceita.idNotificacaoDeReceita IS NULL AND :OLD_idNotificacaoDeReceita IS NULL) OR (tbNotificacaoDeReceita.idNotificacaoDeReceita = :OLD_idNotificacaoDeReceita))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 16
+    top = 576
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idNotificacaoDeReceita'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numero'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'idPaciente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'medicamentoOuSubstancia'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quantidade'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'forma'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dosePorUnidadePosologica'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dose'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quantidadePosologia'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'posologia'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_idNotificacaoDeReceita'
+        ParamType = ptUnknown
+      end>
+  end
+  object DSNotificacaodeReceita: TDataSource
+    DataSet = QNotificacaoDeReceita
+    left = 96
+    top = 648
+  end
+  object QAcompanhante: TZQuery
+    Connection = Connection
+    UpdateObject = UAcompanhante
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM tbAcompanhante'
+    )
+    Params = <>
+    left = 392
+    top = 120
+    object QAcompanhanteidAcompanhante: TLargeintField
+      FieldKind = fkData
+      FieldName = 'idAcompanhante'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QAcompanhantenomeAcompanhante: TStringField
+      FieldKind = fkData
+      FieldName = 'nomeAcompanhante'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 800
+    end
+    object QAcompanhanteRG: TStringField
+      FieldKind = fkData
+      FieldName = 'RG'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object QAcompanhantecpf: TLargeintField
+      FieldKind = fkData
+      FieldName = 'cpf'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QAcompanhantecontato: TStringField
+      FieldKind = fkData
+      FieldName = 'contato'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 800
+    end
+    object QAcompanhanteendereco: TStringField
+      FieldKind = fkData
+      FieldName = 'endereco'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 800
+    end
+    object QAcompanhantebairro: TStringField
+      FieldKind = fkData
+      FieldName = 'bairro'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object QAcompanhantecidade: TStringField
+      FieldKind = fkData
+      FieldName = 'cidade'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object QAcompanhanteuf: TStringField
+      FieldKind = fkData
+      FieldName = 'uf'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object QAcompanhantecep: TLargeintField
+      FieldKind = fkData
+      FieldName = 'cep'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QAcompanhanteidPaciente: TLongintField
+      FieldKind = fkData
+      FieldName = 'idPaciente'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object UAcompanhante: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM tbAcompanhante'
+      'WHERE'
+      '  ((tbAcompanhante.idAcompanhante IS NULL AND :OLD_idAcompanhante IS NULL) OR (tbAcompanhante.idAcompanhante = :OLD_idAcompanhante))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO tbAcompanhante'
+      '  (idAcompanhante, nomeAcompanhante, RG, cpf, contato, endereco, bairro, '
+      '   cidade, uf, cep, idPaciente)'
+      'VALUES'
+      '  (:idAcompanhante, :nomeAcompanhante, :RG, :cpf, :contato, :endereco, '
+      '   :bairro, :cidade, :uf, :cep, :idPaciente)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE tbAcompanhante SET'
+      '  idAcompanhante = :idAcompanhante,'
+      '  nomeAcompanhante = :nomeAcompanhante,'
+      '  RG = :RG,'
+      '  cpf = :cpf,'
+      '  contato = :contato,'
+      '  endereco = :endereco,'
+      '  bairro = :bairro,'
+      '  cidade = :cidade,'
+      '  uf = :uf,'
+      '  cep = :cep,'
+      '  idPaciente = :idPaciente'
+      'WHERE'
+      '  ((tbAcompanhante.idAcompanhante IS NULL AND :OLD_idAcompanhante IS NULL) OR (tbAcompanhante.idAcompanhante = :OLD_idAcompanhante))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 312
+    top = 121
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idAcompanhante'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nomeAcompanhante'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'RG'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cpf'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'contato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'endereco'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'bairro'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cidade'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'uf'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cep'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'idPaciente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_idAcompanhante'
+        ParamType = ptUnknown
+      end>
+  end
+  object DSAcompanhante: TDataSource
+    DataSet = QAcompanhante
+    left = 392
+    top = 184
+  end
+  object QAtestadoDeAcompanhamento: TZQuery
+    Connection = Connection
+    UpdateObject = UAtestadoDeAcompanhamento
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM tbAtestadoDeAcompanhamento'
+    )
+    Params = <>
+    left = 392
+    top = 272
+    object QAtestadoDeAcompanhamentoidAtestado: TLargeintField
+      FieldKind = fkData
+      FieldName = 'idAtestado'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QAtestadoDeAcompanhamentoidAcompanhante: TLongintField
+      FieldKind = fkData
+      FieldName = 'idAcompanhante'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QAtestadoDeAcompanhamentodata: TDateField
+      FieldKind = fkData
+      FieldName = 'data'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QAtestadoDeAcompanhamentoperiodo: TFloatField
+      FieldKind = fkData
+      FieldName = 'periodo'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object QAtestadoDeAcompanhamentocid: TStringField
+      FieldKind = fkData
+      FieldName = 'cid'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object QAtestadoDeAcompanhamentoAtestado: TStringField
+      FieldKind = fkData
+      FieldName = 'Atestado'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+  end
+  object UAtestadoDeAcompanhamento: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM tbAtestadoDeAcompanhamento'
+      'WHERE'
+      '  ((tbAtestadoDeAcompanhamento.idAtestado IS NULL AND :OLD_idAtestado IS NULL) OR (tbAtestadoDeAcompanhamento.idAtestado = :OLD_idAtestado))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO tbAtestadoDeAcompanhamento'
+      '  (idAtestado, idAcompanhante, data, periodo, cid, Atestado)'
+      'VALUES'
+      '  (:idAtestado, :idAcompanhante, :data, :periodo, :cid, :Atestado)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE tbAtestadoDeAcompanhamento SET'
+      '  idAtestado = :idAtestado,'
+      '  idAcompanhante = :idAcompanhante,'
+      '  data = :data,'
+      '  periodo = :periodo,'
+      '  cid = :cid,'
+      '  Atestado = :Atestado'
+      'WHERE'
+      '  ((tbAtestadoDeAcompanhamento.idAtestado IS NULL AND :OLD_idAtestado IS NULL) OR (tbAtestadoDeAcompanhamento.idAtestado = :OLD_idAtestado))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 312
+    top = 272
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idAtestado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'idAcompanhante'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'data'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'periodo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cid'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'Atestado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_idAtestado'
+        ParamType = ptUnknown
+      end>
+  end
+  object DSAtestadoDeAcompanhamento: TDataSource
+    DataSet = QAtestadoDeAcompanhamento
+    left = 392
+    top = 336
+  end
+  object UPaciente: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM tbPacientes'
+      'WHERE'
+      '  ((tbPacientes.idPaciente IS NULL AND :OLD_idPaciente IS NULL) OR (tbPacientes.idPaciente = :OLD_idPaciente))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO tbPacientes'
+      '  (idPaciente, nomePaciente, CPF, registroGeral, contato, endereco, bairro, '
+      '   cidade, estado, CEP, sexo, dataNascimento, nacionalidade, naturalidade)'
+      'VALUES'
+      '  (:idPaciente, :nomePaciente, :CPF, :registroGeral, :contato, :endereco, '
+      '   :bairro, :cidade, :estado, :CEP, :sexo, :dataNascimento, :nacionalidade, '
+      '   :naturalidade)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE tbPacientes SET'
+      '  idPaciente = :idPaciente,'
+      '  nomePaciente = :nomePaciente,'
+      '  CPF = :CPF,'
+      '  registroGeral = :registroGeral,'
+      '  contato = :contato,'
+      '  endereco = :endereco,'
+      '  bairro = :bairro,'
+      '  cidade = :cidade,'
+      '  estado = :estado,'
+      '  CEP = :CEP,'
+      '  sexo = :sexo,'
+      '  dataNascimento = :dataNascimento,'
+      '  nacionalidade = :nacionalidade,'
+      '  naturalidade = :naturalidade'
+      'WHERE'
+      '  ((tbPacientes.idPaciente IS NULL AND :OLD_idPaciente IS NULL) OR (tbPacientes.idPaciente = :OLD_idPaciente))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 24
+    top = 121
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idPaciente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nomePaciente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CPF'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'registroGeral'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'contato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'endereco'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'bairro'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cidade'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'estado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CEP'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'sexo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dataNascimento'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nacionalidade'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'naturalidade'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_idPaciente'
+        ParamType = ptUnknown
+      end>
+  end
+  object UReceituarioDeControleEspecial: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM tbReceituarioDeControleEspecial'
+      'WHERE'
+      '  ((tbReceituarioDeControleEspecial.idReceituario IS NULL AND :OLD_idReceituario IS NULL) OR (tbReceituarioDeControleEspecial.idReceituario = :OLD_idReceituario))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO tbReceituarioDeControleEspecial'
+      '  (idReceituario, idPaciente, prescricao, data)'
+      'VALUES'
+      '  (:idReceituario, :idPaciente, :prescricao, :data)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE tbReceituarioDeControleEspecial SET'
+      '  idReceituario = :idReceituario,'
+      '  idPaciente = :idPaciente,'
+      '  prescricao = :prescricao,'
+      '  data = :data'
+      'WHERE'
+      '  ((tbReceituarioDeControleEspecial.idReceituario IS NULL AND :OLD_idReceituario IS NULL) OR (tbReceituarioDeControleEspecial.idReceituario = :OLD_idReceituario))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 16
+    top = 416
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idReceituario'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'idPaciente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'prescricao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'data'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_idReceituario'
+        ParamType = ptUnknown
+      end>
+  end
+end

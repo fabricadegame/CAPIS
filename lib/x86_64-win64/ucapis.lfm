@@ -1,0 +1,58 @@
+object Form1: TForm1
+  Left = 599
+  Height = 510
+  Top = 197
+  Width = 707
+  Align = alClient
+  Caption = 'C.A.P.I.S'
+  Menu = MainMenu1
+  Position = poDesktopCenter
+  LCLVersion = '2.0.0.4'
+  WindowState = wsMaximized
+  object MainMenu1: TMainMenu
+    left = 68
+    top = 59
+    object MenuFile: TMenuItem
+      Caption = 'Arquivo'
+      OnClick = MenuFileClick
+      object MBackup: TMenuItem
+        Caption = 'Cópria De Segurança'
+        Hint = 'Cria cópia de segurança'
+        OnClick = MBackupClick
+      end
+      object MSobre: TMenuItem
+        Caption = 'Sobre'
+        Hint = 'Informações adicionais sobre o sistema Capis.'
+      end
+      object MSair: TMenuItem
+        Caption = 'Sair'
+        Hint = 'Sair do sistema'
+      end
+    end
+    object MCadastro: TMenuItem
+      Caption = 'Cadastro'
+      Hint = 'Cadastro de pacientes e acompanhantes'
+      object MPaciente: TMenuItem
+        Caption = 'Paciente'
+        Hint = 'Cadastro de pacientes'
+        OnClick = MPacienteClick
+      end
+      object MAcompanhante: TMenuItem
+        Caption = 'Acompanhante'
+        Hint = 'Cadastro de acompanhante'
+      end
+    end
+    object MAtendimento: TMenuItem
+      Caption = 'Atendimento'
+      Hint = 'Módulo de Atendimento'
+      object MConsulta: TMenuItem
+        Caption = 'Consulta'
+        Hint = 'Módulo de consultas'
+      end
+      object MAtestado: TMenuItem
+        Caption = 'Atestado'
+        Hint = 'Módulo de atestados'
+      end
+    end
+  end
+end
